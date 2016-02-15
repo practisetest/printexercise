@@ -18,7 +18,7 @@ public class CSVReaderTest {
 	
 	@Test
 	public void readJobs(){
-	List<Job> jobList =	reader.getJobsFromMSource();
+	List<JobItem> jobList =	reader.getJobsFromMSource();
 	assertTrue(jobList.size() > 0);
 	}
 

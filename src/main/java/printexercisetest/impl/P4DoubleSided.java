@@ -11,10 +11,10 @@ public class P4DoubleSided implements IPrintJobCostCalculator {
 	
 	
 	@Override
-	public BigDecimal calculateCost(int noofpages, jobtype type) {
-		if(type == jobtype.BLACKANDWHITE)
+	public BigDecimal calculateCost(int noofpages, JOBTYPE type) {
+		if(type == JOBTYPE.BLACKANDWHITE)
 		 return	costPerPageBW.multiply(new BigDecimal(noofpages));
-		if(type == jobtype.COLOR)
+		if(type == JOBTYPE.COLOR)
 			 return	costPerPageColor.multiply(new BigDecimal(noofpages));
 		return null;
 	}

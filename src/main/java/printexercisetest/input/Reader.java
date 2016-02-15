@@ -4,15 +4,16 @@ import java.util.List;
 
 public abstract class Reader {
 	
-	public final Job[] getJobs(){
-		List<Job> jobList  = getJobsFromMSource();
-		//perform any operation on jobs
-		//return array
-		Job[] jobs = new Job[jobList.size()];
-		
-		return jobs = jobList.toArray(jobs);
+	public final Job getJobs(){
+		List<JobItem> jobList  = getJobsFromMSource();
+		JobItem[] jobs = new JobItem[jobList.size()];
+		Job job = null;
+		if(jobs != null){
+			job = new Job(jobList.toArray(jobs));
+		}
+		return job;
 	}
 	
-	protected abstract List<Job>  getJobsFromMSource();
+	protected abstract List<JobItem>  getJobsFromMSource();
 	
 }

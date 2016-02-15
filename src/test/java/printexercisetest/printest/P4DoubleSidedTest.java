@@ -26,28 +26,28 @@ public class P4DoubleSidedTest {
 	@Test
 	public void calculateCostTestColor(){
 		
-		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.jobtype.COLOR);
+		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.JOBTYPE.COLOR);
 		assertTrue(result.compareTo(new BigDecimal(20)) == 0);
 	}
 	
 	@Test
 	public void calculateCostTestBlack(){
 		
-		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.jobtype.BLACKANDWHITE);
+		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.JOBTYPE.BLACKANDWHITE);
 		assertTrue(result.compareTo(new BigDecimal(10)) == 0);
 	}
 	
 	@Test
 	public void calculateCostTestColor_invalid(){
 		
-		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.jobtype.COLOR);
+		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.JOBTYPE.COLOR);
 		assertFalse(result.compareTo(new BigDecimal(150)) == 0);
 	}
 	
 	@Test
 	public void calculateCostTestBlack_invalid(){
 		
-		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.jobtype.BLACKANDWHITE);
+		BigDecimal result  = doublesided.calculateCost(100, IPrintJobCostCalculator.JOBTYPE.BLACKANDWHITE);
 		assertFalse(result.compareTo(new BigDecimal(150)) == 0);
 	}
 

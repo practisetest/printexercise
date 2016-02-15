@@ -2,62 +2,32 @@ package printexercisetest.input;
 
 import java.math.BigDecimal;
 
-import printexercisetest.impl.IPrintJobCostCalculator.jobtype;
-
 public class Job {
-     
-	private int  nosinglesidedPrint = 0;
-	private int  nodoublesidedPrint = 0;
-	private jobtype color ;
-	private BigDecimal price;
+
+	private JobItem[] jobitems;
 	
-	public Job(int singlesided, int doublesided, boolean b) {
-		
-		setColor(b ?  jobtype.COLOR : jobtype.BLACKANDWHITE);
-		
-		this.setNosinglesidedPrint(singlesided);
-		this.setNodoublesidedPrint(doublesided);
-		
+	private BigDecimal totalcost;
+	
+	public BigDecimal getTotalcost() {
+		return totalcost;
 	}
 
-
-	public int getNosinglesidedPrint() {
-		return nosinglesidedPrint;
+	public void setTotalcost(BigDecimal totalcost) {
+		this.totalcost = totalcost;
 	}
 
-
-	public void setNosinglesidedPrint(int nosinglesidedPrint) {
-		this.nosinglesidedPrint = nosinglesidedPrint;
+	public Job(JobItem[] jobs){
+		this.jobitems = jobs;
 	}
 
-
-	public int getNodoublesidedPrint() {
-		return nodoublesidedPrint;
+	public JobItem[] getJobitems() {
+		return jobitems;
 	}
 
-
-	public void setNodoublesidedPrint(int nodoublesidedPrint) {
-		this.nodoublesidedPrint = nodoublesidedPrint;
+	public void setJobitems(JobItem[] jobitems) {
+		this.jobitems = jobitems;
 	}
-
-
-	public jobtype getColor() {
-		return color;
-	}
-
-
-	public void setColor(jobtype color) {
-		this.color = color;
-	}
-
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-
+	
+	
+	
 }

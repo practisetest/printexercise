@@ -22,9 +22,8 @@ public class CSVFileReader extends Reader {
 	
 	private static String fileName = "c:\\printjobs.csv";
 	
-
 	@Override
-	protected List<Job>  getJobsFromMSource() throws ApplicationException {
+	protected List<JobItem>  getJobsFromMSource() throws ApplicationException {
 		
 			FileReader fileReader = null;
 			
@@ -37,14 +36,14 @@ public class CSVFileReader extends Reader {
 	        	fileReader = new FileReader(getFileName());
 	            csvFileParser = new CSVParser(fileReader, csvFileFormat);
 	            
-	        	List<Job> jobList = new ArrayList<Job>();
+	        	List<JobItem> jobList = new ArrayList<JobItem>();
 	            
 	            List<CSVRecord> csvRecords = csvFileParser.getRecords(); 
 	            
 	            //Read the CSV file records starting from the second record to skip the header
 	            for (int i = 0; i < csvRecords.size(); i++) {
 	            	CSVRecord record =  csvRecords.get(i);
-	            	Job job = new Job(getIntger(record.get(SINGLE)), 
+	            	JobItem job = new JobItem(i,getIntger(record.get(SINGLE)), 
 	            					  getIntger(record.get(DOUBLE)),
 	            					  getBoolean(record.get(COLOR)));
 	            	jobList.add(job);	
